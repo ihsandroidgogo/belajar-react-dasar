@@ -23,7 +23,6 @@ Sehingga nanti yang dipanggil HTML nya dengan script type nya dari component yan
 **Vite Config**
 
 Untuk bisa menampilkan beberapa file HTML karena menggunakan vite, kita harus menambahkan beberapa baris kode di vite.config.js nya,seperti ini :
-
 ```
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -40,4 +39,13 @@ export default defineConfig({
   }
 })
 ```
-Lalu bisa jalankan npm run build nya biasa nya nanti muncul file nya di folder 'dist'.
+Lalu bisa jalankan **npm run build** nya biasa nya nanti muncul file nya di folder 'dist', nanti bisa coba jalankan lagi untuk mengecek hasil nya.
+
+Karena tadi buat untuk component HelloWorld dan hello-world.html, bisa coba buka http://localhost:5173/hello-world.html
+
+**Aturan JSX**
+Component hanya boleh mengembalikan satu element, jika ingin beberapa element harus di bungkus di dalam parent element.
+
+Wajib Menutup semua tag element
+
+Attribute menggunakan camelCase, karena akan di konversi ke variable javascript jadi penulisan wajib mengikuti cara javascript, contoh className (bukan class-name).
