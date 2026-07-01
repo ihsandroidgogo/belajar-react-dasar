@@ -53,4 +53,4 @@ Component hanya boleh mengembalikan satu element, jika ingin beberapa element ha
 
 Wajib Menutup semua tag element
 
-Attribute menggunakan camelCase, karena akan di konversi ke variable javascript jadi penulisan wajib mengikuti cara javascript, contoh className (bukan class-name).
+Attribute menggunakan camelCase, karena akan di konversi ke variable javascript jadi penulisan wajib mengikuti cara javascript, **contoh className (bukan class-name)**.
