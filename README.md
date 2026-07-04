@@ -138,9 +138,11 @@ hello-world/main.jsx
 ```
 
 **Null Component**
+
 Pada kasus tertentu, mungkin ada kondisi dimana kita ingin mengembalikan Component atau tidak ingin mengembalikan Component apapun.
 
 Kita bisa mengembalikan null untuk menandai bahwa tidak ada Component yang kita kembalikan.
 
 **Ternary Operator**
+
 Pada kasus yang lebih sederhana kita bisa gunakan Ternary Operator Javascript di JSX.
