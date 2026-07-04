@@ -119,3 +119,28 @@ Menggunakan style CSS bisa memakai file CSS atau langsung di attribut style meng
 
 Menggunakan Style pada JSX tidak menggunakan atribut class, melainkan className.
 
+**Conditional**
+
+Saat membuat halaman web, sering sekali kita menampilkan tampilan berbeda pada kondisi tertentu hal ini bisa dilakukan dengan JSX.
+
+Kita bisa menambahkan kondisi Javascript dan mengembalikan Component yang berbeda berdasarkan kondisi yang di inginkan.
+
+Contoh kita bisa membuat halaman todolist, dan jika todo nya sudah selesai kita coret element teks nya.
+
+Contoh bisa cek 
+
+```bash
+todolist/Todolist.jsx
+```
+Untuk main.jsx masih pakai file yang sama di 
+```bash
+hello-world/main.jsx
+```
+
+**Null Component**
+Pada kasus tertentu, mungkin ada kondisi dimana kita ingin mengembalikan Component atau tidak ingin mengembalikan Component apapun.
+
+Kita bisa mengembalikan null untuk menandai bahwa tidak ada Component yang kita kembalikan.
+
+**Ternary Operator**
+Pada kasus yang lebih sederhana kita bisa gunakan Ternary Operator Javascript di JSX.
