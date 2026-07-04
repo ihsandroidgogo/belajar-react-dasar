@@ -54,3 +54,30 @@ Component hanya boleh mengembalikan satu element, jika ingin beberapa element ha
 Wajib Menutup semua tag element
 
 Attribute menggunakan camelCase, karena akan di konversi ke variable javascript jadi penulisan wajib mengikuti cara javascript, **contoh className (bukan class-name)**.
+
+**Destructuring Props**
+Menggunakan destructuring paramater pada props, mempermudah membaca attribut yang tersedia pada component dan dia javascript object jadi bisa ditambahkan default value pada props.
+
+Untuk mengirim props bisa menggunakan attribute seperti HTML element ketika menggunakan Component
+
+Contoh :
+```bash
+export default function HelloWorld() {
+  return (
+    <div>
+        <HeaderHelloWorld teks="Hello, World!" />
+        <ParagrafText/>
+    </div>
+  );
+}
+
+function HeaderHelloWorld({teks="Ups lupa kasih teks"}){
+  return (
+    <h1 style={{
+      color : "red",
+      backgroundColor : "aqua"
+    }}>{teks}</h1>
+  )
+}
+```
+
