@@ -1,7 +1,14 @@
+import './HelloWorld.css';
+
 export default function HelloWorld() {
+
+  const props = {
+    teks : "Hello, React!"
+  }
+
   return (
     <div>
-        <HeaderHelloWorld teks="Hello, World!" />
+        <HeaderHelloWorld {...props}/>
         <ParagrafText/>
     </div>
   );
@@ -9,21 +16,13 @@ export default function HelloWorld() {
 
 function HeaderHelloWorld({teks="Ups lupa kasih teks"}){
   return (
-    <h1 style={{
-      color : "red",
-      backgroundColor : "aqua"
-    }}>{teks}</h1>
+    <h1 className="title">{teks}</h1>
   )
 }
 
 function ParagrafText(){
   const teks = "Selamat Belajar React JS!"
-  const style = {
-    color : "blue",
-    backgroundColor : "yellow"
-  }
-
   return(
-    <p style={style}>{teks}</p>
+    <p className="content">{teks}</p>
   )
 }

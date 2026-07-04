@@ -81,3 +81,41 @@ function HeaderHelloWorld({teks="Ups lupa kasih teks"}){
 }
 ```
 
+**Spread Syntax**
+Mengirim props dari parent component ke child component bisa merepotkan jika ada banyak sekali child nya.
+
+Jika hanaya ingin melakukan foward semua props ke child component bisa menggunakan Spead Syntax.
+
+```bash
+<HeaderHelloWorld {...props}/>
+```
+
+**Nested Component**
+
+JSX mendukung pembuatan Nested Component, sehingga bisa membuat Component yang didalamnya bisa ditambahkan component lain secara dinamis.
+
+Untuk component bisa memiliki component lain di dalanmya bisa menggunakan attribute children pada Props.
+
+Contoh membuat Component bernama Container dan di dalam nya berisi Component lain nya.
+
+Contoh :
+```bash
+export default function Container({ children }) {
+  return (
+    <div>
+        <h1>Ihsandroid Gogo</h1>
+            {children}
+        <footer>
+            <p>Copyright &copy; 2026 Ihsandroid Gogo</p>
+        </footer>
+    </div>
+  );
+}
+```
+Nama parameter nya harus **children**.
+
+**Style**
+Menggunakan style CSS bisa memakai file CSS atau langsung di attribut style menggunakan kurung kurawal.
+
+Menggunakan Style pada JSX tidak menggunakan atribut class, melainkan className.
+
