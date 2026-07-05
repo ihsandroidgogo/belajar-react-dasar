@@ -146,3 +146,120 @@ Kita bisa mengembalikan null untuk menandai bahwa tidak ada Component yang kita 
 **Ternary Operator**
 
 Pada kasus yang lebih sederhana kita bisa gunakan Ternary Operator Javascript di JSX.
+
+**Collection Component**
+
+Pasti kita sering menampilkan Component yang sama berulang ulang sesuai koleksi data, JSX sendiri tidak memiliki fitur perulangan.
+
+Untuk menampilkan multiple Component, sama seperti Conditional, kita akan memanfaatkan Javascript.
+
+Kita bisa menggunakan Javascript Array untuk mengubah data Array menjadi Component, contoh menggunakan method **map()**pada Array.
+
+Contoh :
+
+```
+import Todo from "./Todo";
+
+export default function TodoList(){
+
+    const data = [
+        {
+            teks : "Belajar HTML",
+            sudahSelesai : true,
+        },
+          {
+            teks : "Belajar CSS",
+            sudahSelesai : true,
+        },
+          {
+            teks : "Belajar Javascript",
+            sudahSelesai : true,
+        },
+          {
+            teks : "Belajar ReactJS",
+            sudahSelesai : false,
+        },
+
+    ]
+
+    const todos = data.map((todo) => {
+        return <Todo {...todo}/>
+    })
+
+    return (
+        <ul>
+            {todos}
+        </ul>
+    )
+}
+```
+
+**Component Key**
+
+Saat membuat Collection Component tiap component diperlukan id (unique,string,number) menggunakan attribute key
+
+Component key diperlukan agar React bisa mengenali Component ketika berubah, seperti posisi nya di hapus, diubah, ditambahkan pada collection.
+
+Biasanya Component Key akan diambil dari data, sehingga lebih konsisten.
+
+Contoh :
+
+```
+const data = [
+  {
+  id:0,
+  teks:"learn HTML,
+  sudahSelesai: true
+  }
+]
+
+return (
+  <ul>
+    {data.map(todo) => {
+      return <Todo key={todo.id} {...todo}/>
+    }}
+  </ul>
+)
+```
+
+**Pure Function**
+
+Pure function bisa disebutkan jika memenuhi dua kriteria berikut
+- function mengembalikan nilai yang sama untuk nilai parameter yang sama
+- function tidak memiliki efek samping, tidak ada perubahan pada variable non local (variable yang berada diluar function).
+
+Contoh :
+
+```
+/// pure function
+export function double(num){
+  return num * 2;
+}
+
+/// bukan pure function
+let count = 0;
+export function increment (){
+  count++;
+  return count;
+}
+```
+
+Lalu apa hubungan nya dengan React? react mengasumsi bahwa setiap component yang kita buat adalah **Pure Function**.
+
+ini berarti bahwa react component yang kita buat harus selalu mengembalikan JSX yang sama dengan input yang sama.
+
+Walaupun sebenarnya kita bisa saja membuat React Component yang tidak Pure, tapi sangat tidak disarankan, karena setiapp memanggil component dengan input sama bisa menghasilkan nilai yang tidak konsisten.
+
+Lalu bagaimana cara membuat pure component? contoh disini kita akan membuat component Row dan Table.
+
+```bash
+kita bisa pindahkan variable counter menjadi local variable di Table dan gunakan Props sebagai counter nya.
+```
+
+**Dimana bisa melakukan effect samping?**
+
+React menyediakan tempat khusus jika kita ingin membuat Component yang bisa menghasilkan efek samping
+
+Efek samping dari component biasanya ditempatkan di **Event Handler**, _yaitu aksi yang terjadi ketika berinteraksi dengan Component._
+
+Atau ketika misal Component tergantung dengan external system (misal API), maka React menyediakan **function useEffect()**.
