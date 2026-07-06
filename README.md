@@ -319,3 +319,17 @@ Main.jsx
 Docs : 
 https://react.dev/reference/react-dom/components/common
 https://id.react.dev/learn/responding-to-events
+
+**Event Object**
+
+Saat membuat Event Handler Function, bisa ditambahkan Event Object sebagai parameter di Function tersebut, React Event Object kompatible dengan standar DOM Event Object.
+
+Contoh :
+```bash
+<button onClick={namaParameter => {
+  console.log(namaParameter); // React event object
+}} />
+```
+
+Docs :
+https://react.dev/reference/react-dom/components/common#react-event-object

@@ -1,5 +1,6 @@
 export default function TombolAlert({teks,pesan}){
-    function handleClick(){
+    function handleClick(e){
+        console.info(e.target)
         alert(pesan)
     }
 
