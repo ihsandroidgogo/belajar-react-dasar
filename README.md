@@ -291,6 +291,31 @@ export default function TombolAlert({teks}){
 }
 ```
 
+_Membaca Props di Event Handler_
+
+Keuntungan membuat function event handler di dalam component adalah kita bisa membaca Props yang digunakan Component tersebut.
+
+_Event Handler sebagai Props_
+
+Props adalah Javascript Object, jadi bisa memiliki attribute dengan tipe function, karena itu kita juga bisa membuat event handler di Props.
+
+Saat membuat attribute di Props yang berisikan Event Handler, biasa nya nama attribute nya akan di awali dengan 'on', contoh 'onSmash','onHit' dan lain lain.
+
+Contoh :
+```
+MyButton.jsx
+export default function MyButton({ teks, onSmash }) {
+  return (
+    <button onClick={onSmash} style={{ margin: '10px', padding: '10px 20px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '4px' }}>
+      {teks}
+    </button>
+  );
+}
+
+Main.jsx
+      <MyButton teks="Klik Saya!" onSmash={() => alert("Anda telah SMASH tombol ini!")} />
+```
+
 Docs : 
 https://react.dev/reference/react-dom/components/common
 https://id.react.dev/learn/responding-to-events

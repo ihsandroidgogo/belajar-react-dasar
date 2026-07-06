@@ -1,6 +1,6 @@
-export default function TombolAlert({teks}){
+export default function TombolAlert({teks,pesan}){
     function handleClick(){
-        alert("Tombol sudah Anda Klik!")
+        alert(pesan)
     }
 
     return  (
