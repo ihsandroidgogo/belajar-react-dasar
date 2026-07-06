@@ -4,6 +4,7 @@ import {StrictMode} from 'react';
 import Container from './Container';
 import TodoList from '../todolist/Todolist';
 import Table from '../table/Table';
+import TombolAlert from '../button/AlertButton';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
       <Helloworld />
       <TodoList/>
       <Table/>
+      <TombolAlert teks="Klik Disini!"/>
     </Container>
   </StrictMode>
 );

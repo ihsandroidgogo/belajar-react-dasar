@@ -263,3 +263,34 @@ React menyediakan tempat khusus jika kita ingin membuat Component yang bisa meng
 Efek samping dari component biasanya ditempatkan di **Event Handler**, _yaitu aksi yang terjadi ketika berinteraksi dengan Component._
 
 Atau ketika misal Component tergantung dengan external system (misal API), maka React menyediakan **function useEffect()**.
+
+**Event Handler**
+
+Di React Component dan HTML Element kita bisa menambahkan Event Handler.
+
+Untuk menambah event handler kita akan tambahkan function sebagai handler nya, bisa dalam bentuk anonymous function, arrow function, atau membuat function terlebih dahulu di dalam scope component nya
+
+Nama Function untuk handler biasanya diawali dengan nama 'handle' dan diikuti dengan jenis event handler misal :
+
+```bash
+handleClick()
+handleMouseEnter()
+```
+
+Contoh :
+
+```
+export default function TombolAlert({teks}){
+    function handleClick(){
+        alert("Button di klik")
+    }
+
+    return  (
+        <button onClick={handleClick}>{teks}</button>
+    )
+}
+```
+
+Docs : 
+https://react.dev/reference/react-dom/components/common
+https://id.react.dev/learn/responding-to-events
