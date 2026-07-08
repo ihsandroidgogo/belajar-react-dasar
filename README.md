@@ -397,3 +397,23 @@ Untuk membuat state, kita bisa menggunakan function _useState(initial)_
 Function useState akan mengembalikan array dengan dua nilai, pertama adalah State nya, dan kedua ada Function untuk mengubah value di state tersebut.
 
 Component yang menggunakan State tersebut akan secara otomatis di Render.
+
+_State terisolasi dar private_
+
+State merupakan data yang terisolasi dan private secara lokal terhadap component yang menggunakan nya.
+
+artinya jika kita me-render component yang sama berkali kali, maka State dari tiap component tersebut akan terpisah satu sama lain.
+
+**Render **
+
+Sebelum Component yang kita buat ditampilkan di layar, Component harus di render di React, oleh karena itu kita perlu tahu bagaimana cara kerja proses React ini ketika menampilkan component yang kita buat.
+
+Ada 3 Tahapan proses menampilkan Component di React :
+- Pertama, trigger (memicu) proses render
+- Kedua, melakukan proses render Component
+- Ketiga, menempatkan hasil render Component ke DOM
+
+_Proses Render :_
+
+Trigger Render -> Render Component -> Commit to DOM
+
