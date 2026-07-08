@@ -6,6 +6,7 @@ import TodoList from '../todolist/Todolist';
 import Table from '../table/Table';
 import TombolAlert from '../button/AlertButton';
 import MyButton from '../button/MyButton';
+import Toolbar from '../button/Toolbar';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,10 @@ root.render(
       <Table/>
       <TombolAlert teks="Klik Disini!" pesan="Anda telah mengklik tombol ini!"/>
       <MyButton teks="Klik Saya!" onSmash={() => alert("Anda telah SMASH tombol ini!")} />
+      <Toolbar onClick={(e) => {
+        e.stopPropagation();
+        alert("Kamu Klik Tombol Toolbar!");
+      }}/>
     </Container>
   </StrictMode>
 );

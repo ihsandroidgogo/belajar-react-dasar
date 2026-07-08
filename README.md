@@ -333,3 +333,17 @@ Contoh :
 
 Docs :
 https://react.dev/reference/react-dom/components/common#react-event-object
+
+**Event Propagation**
+
+Event di react component akan selalu disebarkan ke component yang ada di atas nya (Event Propagation).
+
+Misal kita memiliki div dengan event onclick, lalu di dalamnya kita memiliki button dengan event onclick, ketika button di klik maka onclick di button akan terpicu dan selanjutnya onclick di div juga akan terpicu.
+
+kadang mungkin kita tidak ingin terjadi, maka kita bisa hentikan proses nya dengan method stopPropagation().
+
+**Prevent Default**
+
+Prevent default bergunakan ketika membuat event handler yaitu ketika ingin menghentikan default action.
+
+Biasa nya kita membuat Form, ketika dipicu event onClick, kita ingin hentikan default action Form Submit.
