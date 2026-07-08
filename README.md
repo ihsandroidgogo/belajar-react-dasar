@@ -357,3 +357,43 @@ Contoh kita membuat form say hello, dimana ketika button di klik, kita ingin men
 **DOM Manipulation**
 
 Sebenarnya DOM Manipulation tidak direkomendasikan, terutama jika misal data yang memicu perubahan Element di Component bersumber dari berbagai Event Handler, maka dari itu sangat disarankan menggunakan **"State"**.
+
+**Hooks**
+
+React Hooks adalah fungsi khusus di React yang memungkinkan kita menggunakan state dan fitur React lainnya (seperti lifecycle, context, refs) di dalam function component — tanpa perlu menulis class component.
+
+_Hooks yang paling sering dipakai_
+useState — menyimpan dan mengubah state di function component
+```bash
+const [count, setCount] = useState(0);
+```
+useEffect — menjalankan "efek samping" (side effect): fetch data, subscribe event, manipulasi DOM, dll. Menggantikan componentDidMount, componentDidUpdate, componentWillUnmount
+
+```bash
+useEffect(() => {
+  fetchData();
+}, []); // array kosong = jalan sekali saat mount
+```
+
+dan lain sebagainya.
+
+Docs : https://react.dev/reference/react/hooks
+
+**State**
+
+Component kadang perlu untuk berubah dikarenakan interaksi yang dilakukan pengguna, seperti input di klik bisa menaikkan data counter, tombol next bisa mengubah gambar banner yang sedang muncul, dsn.
+
+Component harus bisa mengingat nilai saat ini seperti counter saat ini atau gambar saat ini, di react memori spesific di component disebut _State_.
+
+_State menggunakan Local variabel biasa_
+
+Apakah local variable biasa di Component bisa digunakan di State? sayangnya hal ini tidak bisa dilakukan, ketika react melakukan render Component untuk yang kedua kali dan seterus nya maka semua kode Component akan di eksekusi ulang, oleh karena itu local variable akan kembali ke nilai awal.
+
+Perubahan di local variable juga tidak akan memicu render ulang Component.
+
+**useState**
+
+Untuk membuat state, kita bisa menggunakan function _useState(initial)_
+Function useState akan mengembalikan array dengan dua nilai, pertama adalah State nya, dan kedua ada Function untuk mengubah value di state tersebut.
+
+Component yang menggunakan State tersebut akan secara otomatis di Render.
