@@ -7,6 +7,8 @@ import Table from '../table/Table';
 import TombolAlert from '../button/AlertButton';
 import MyButton from '../button/MyButton';
 import Toolbar from '../button/Toolbar';
+import SearchForm from '../form/SearchForm';
+import SayHelloForm from '../form/SayHelloForm';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +23,8 @@ root.render(
         e.stopPropagation();
         alert("Kamu Klik Tombol Toolbar!");
       }}/>
+      <SearchForm/>
+      <SayHelloForm/>
     </Container>
   </StrictMode>
 );

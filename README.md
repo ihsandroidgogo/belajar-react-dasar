@@ -347,3 +347,13 @@ kadang mungkin kita tidak ingin terjadi, maka kita bisa hentikan proses nya deng
 Prevent default bergunakan ketika membuat event handler yaitu ketika ingin menghentikan default action.
 
 Biasa nya kita membuat Form, ketika dipicu event onClick, kita ingin hentikan default action Form Submit.
+
+**Side Effect**
+
+Component boleh memiliki Side Effect namun biasanya terjadi dikarenakan adanya interaksi dari pengguna melalui event handler
+
+Contoh kita membuat form say hello, dimana ketika button di klik, kita ingin menampilkan Hello + nama pada Text.
+
+**DOM Manipulation**
+
+Sebenarnya DOM Manipulation tidak direkomendasikan, terutama jika misal data yang memicu perubahan Element di Component bersumber dari berbagai Event Handler, maka dari itu sangat disarankan menggunakan **"State"**.
