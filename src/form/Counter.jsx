@@ -11,13 +11,8 @@ export default function Counter() {
     return (
         <div>
             <p>You clicked {counterNya} times</p>
-            <button onClick={handleClick()} style={
-                {
-                    backgroundColor:'red',
-                    padding: '20px 20px',
-                    margin: '20px 20px',
-                }
-                }>Click me </button>
+            <button onClick={handleClick} style={{backgroundColor: "red", color: "white", padding: "10px 20px", borderRadius: "5px", outline: "none", border: "none", cursor: "pointer" }}
+                >Click me </button>
         </div>
     );
 }
