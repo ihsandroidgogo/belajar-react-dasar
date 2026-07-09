@@ -417,3 +417,62 @@ _Proses Render :_
 
 Trigger Render -> Render Component -> Commit to DOM
 
+**Snapshot**
+
+Variable state sekilas terlihat seperti variable javascript biasa, tapi sebenarnya state itu mirippp seperti Snapshot (kondisi saat itu).
+
+Mengubah nilai variable state tidak akan mengubah snapshot, melainkan akan memicu render ulang untuk membuat Snapshot baru.
+
+kita mungkin berfikir bahwa tampila web berubah secara total secara langsung karena response dari event yang digunakan pengguna seperti klik tombol.
+
+namun sebenarnya tidak seperti itu, ketika terjadi perubahan state itu akan memicu render ulang sehingga akan membuat snapshot baru yang ditampilan di layar.
+
+Jadi snapshot membekukan tampilan sehingga tidak berubah, baru ketika di render ulang data atau tampilan nya akan berubah.
+
+Ingat mengubah state tidak berarti data akan langsung berubah, mengubah state sebenarnya hanya men-trigger render ulang dengan nilai state yang baru.
+
+**State Update**
+
+Terkadang, kita memang mungkin ada keperluan untuk mengubah data di State yang sama berkali-kali, dan jika kita memang ingin mengubah data di State dengan data yang harapan nya sudah diubah sebelumnya (walaupun belum di render).
+
+Kita bisa menggunakan lambda sebagai parameter ketika  memanggil function untuk update data State.
+
+Contoh :
+
+```bash
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(c => c + 1);
+    setCount(c => c + 1);
+    setCount(c => c + 1);
+    console.log(count);
+  }
+
+  return <button onClick={handleClick}>{count}</button>;
+  <h1>Counter :{counter} </h1>
+}
+```
+
+**Object di State**
+
+State bisa menyimpan jenis data Javascript apapun, termasuk Object.
+
+tetapi tidak disarankan untuk mengubah object yang terdapat di State.
+
+Jika kita ingin mengubah object di state, disarankan membuat object baru lalu mengubah data di State tersebut dengan Object Baru.
+
+**Immutable Data**
+
+Saat kita membuat data di State, kita harus memperlakukan data di State sebagai Immutable data (tidak bisa berubah).
+
+Artinya data di State hanya digunakan untuk dibaca(read-only)
+
+Jika kita ingin mengubah data di State, maka kita harus ubah menggunakan data baru yang artinya data lama tidak di modifikasi.
+
+ini adalah praktek yang biasa dilakukan di React, walaupun pada kenyataan nya object di javascript tidak immutable.
+
+Hal ini direkomendasikan agar kita tidak salah mengubah data langsung, padahal kita tahu bahwa mengubah data tidak akan memicu proses render ulang
+
+Untung nya di javascript kita bisa menggunakan Spread Syntax untuk membantu meng-copy attribute di Object.

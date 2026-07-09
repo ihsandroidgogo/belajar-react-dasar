@@ -3,6 +3,8 @@ import {useState} from 'react';
 export default function Counter() {
     let [counterNya, setCounterNya] = useState(0);
 
+    console.info(`Render Counter ${counterNya}`)
+
     function handleClick() {
         setCounterNya(counterNya + 1)
         console.log(counterNya)
