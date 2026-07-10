@@ -476,3 +476,5 @@ ini adalah praktek yang biasa dilakukan di React, walaupun pada kenyataan nya ob
 Hal ini direkomendasikan agar kita tidak salah mengubah data langsung, padahal kita tahu bahwa mengubah data tidak akan memicu proses render ulang
 
 Untung nya di javascript kita bisa menggunakan Spread Syntax untuk membantu meng-copy attribute di Object.
+
+**Nested Object**
