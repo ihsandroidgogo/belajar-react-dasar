@@ -478,3 +478,29 @@ Hal ini direkomendasikan agar kita tidak salah mengubah data langsung, padahal k
 Untung nya di javascript kita bisa menggunakan Spread Syntax untuk membantu meng-copy attribute di Object.
 
 **Nested Object**
+
+Ada kasus kita menggunakan Nested Object, kita disarankan untuk selalu membuat object baru ketika membuat State.
+
+Kadang mmemang menyulitkan ketika Nested Object nya terlalu besar, oleh karena itu disarankan tidak terlalu dalam membuat Nested Object nya.
+
+**Immer Library**
+
+Salah satu library yang sering digunakan ketika develop aplikasi menggunakan react adalah Immer.
+
+Immer adalah library yang digunakan untuk membuat immutabble object dari object saat ini.
+
+Menggunakan Immer akan lebih mudah dibandingkan menggunakan Spread syntax, terutama untuk Object yang kompleks dan nested.
+
+```bash
+npm install immer use-immer
+```
+
+**Array di state**
+
+Array di State harus kita perlakukan sebagai Immutable Data sama seperti Object.
+
+Artinya operasi menambah data, mengubah data atau menghapus data di arraym, kita harus buat array baru untuk di update ke State.
+
+_Hal ini agak menyulitkan, karena itu kita memakai bantuan library Immer_.
+
+
