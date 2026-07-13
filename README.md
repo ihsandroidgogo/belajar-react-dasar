@@ -504,3 +504,14 @@ Artinya operasi menambah data, mengubah data atau menghapus data di arraym, kita
 _Hal ini agak menyulitkan, karena itu kita memakai bantuan library Immer_.
 
 
+**Sharing State**
+
+Terkadang kita ingin membuat State untuk beberapa Component yang selalu berubah bersama-sama atau sederhana nya sharing (berbagi) state.
+
+Untuk melakukan itu, kita harus mengubah lokasi State dari Component-component tersebut ke parent component mereka lalu kirim State nya melalui Props.
+
+Bisa di test di task :
+- Task.jsx
+- TaskForm.jsx
+- TaskList.jst
+
