@@ -515,3 +515,35 @@ Bisa di test di task :
 - TaskForm.jsx
 - TaskList.jst
 
+**Mempertahankan State**
+
+State terisolasi antar Component. React melacak State mana yang dimiliki oleh Component berdasarkan tempatnya di struktur UI
+
+Kita bisa mengatur, kapan kita ingin mempertahankan State, kapan kita akan mereset State
+
+State sendiri tidak disimpan di dalam Component. State itu disimpan di React, sedangkan ketika kita menggunakan State di Component, maka sebenarnya kita akan menggunakan State yang ada di React
+
+Cara React bisa tahu State mana yang digunakan oleh Component adalah, melihat posisi Component di struktur UI
+
+**Posisi Component**
+
+Seperti dijelaskan sebelumnya, React menyimpan State sesuai dengan posisi Component
+
+Ketika posisi Componen berubah, misal hilang dari tampilan layar
+
+Secara otomatis State akan dihapus dari React
+Misal, kita akan membuat Component Counter bisa dihilangkan
+
+Ketika nanti Component tersebut dihilangkan dari tampilan, mana secara otomatis State nya juga akan hilang
+
+**Component Sama di Posisi Sama**
+
+Jika terdapat kasus kita menampilkan Component yang sama
+
+Tapi secara struktur UI dia berada di posisi yang sama
+
+Maka State akan dipertahankan oleh React, yang artinya tidak akan dihapus
+
+Hal ini mungkin akan membingungkan, tapi kita harus mengerti hal ini, karena React akan menyimpan informasi State mengikuti Posisi Component, jika Component nya sama, dan posisinya sama, maka State akan dipertahankan
+
+
