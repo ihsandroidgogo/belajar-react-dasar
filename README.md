@@ -2,6 +2,12 @@
 
 Belajar React JS (Versi 19.2.7)
 
+**Membuat Project Baru**
+
+```
+npm create vite@latest nama-project -- --template react
+```
+
 **Membuat Component**
 
 Component dibuat dalam satu file JSX dengan nama sesuai dengan nama komponent jika buat component HelloWorld maka nama file nya **HelloWorld.jsx** (CamelCase).
